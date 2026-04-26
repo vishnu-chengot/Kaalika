@@ -1,0 +1,73 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Kaalika — Redefining Black Sarees with Elegance and Power." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+		
+		<style is:global>
+			:root {
+				--bg-black: #0a0a0a;
+				--text-off-white: #f5f0eb;
+				--accent-silver: #c0c0c0;
+				--accent-gold: #d4a853;
+			}
+			
+			html {
+				font-family: 'Inter', sans-serif;
+				background: var(--bg-black);
+				color: var(--text-off-white);
+				scroll-behavior: smooth;
+			}
+
+			h1, h2, h3, h4, .font-serif {
+				font-family: 'Playfair Display', serif;
+			}
+
+			body {
+				margin: 0;
+				overflow-x: hidden;
+			}
+
+			/* Custom Scrollbar */
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: #000;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #333;
+				border-radius: 4px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #444;
+			}
+
+			/* Selection Color */
+			::selection {
+				background: var(--accent-gold);
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

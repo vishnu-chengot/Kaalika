@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.jsx';
+import WhyUs from '../components/WhyUs.astro';
+import ProductShowcase from '../components/ProductShowcase.jsx';
+import SignatureSection from '../components/SignatureSection.astro';
+import Testimonials from '../components/Testimonials.jsx';
+import FAQ from '../components/FAQ.jsx';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Kāalika — Re-defining Black Sarees">
+	<main class="bg-black">
+		<Navbar />
+		
+		<Hero client:load />
+		
+		<WhyUs />
+		
+		<ProductShowcase client:visible />
+		
+		<SignatureSection />
+		
+		<Testimonials client:visible />
+		
+		<FAQ client:visible />
+		
+		<Footer />
+	</main>
+</Layout>
+
+<style is:global>
+	/* Any additional global fixes */
+	body {
+		background-color: black;
+	}
+</style>

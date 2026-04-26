@@ -1,0 +1,45 @@
+---
+---
+<section id="signature" class="py-48 px-8 md:px-24 bg-[#050505] relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/stardust.png');"></div>
+
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+    <span class="text-[10px] uppercase tracking-[0.8em] text-accent-gold mb-12 block opacity-0 reveal-up">Philosophy</span>
+    
+    <h2 class="text-4xl md:text-7xl font-serif text-white mb-16 leading-tight opacity-0 reveal-up">
+      Black is not just a color.<br />
+      It is <span class="italic">power</span>, mystery, and <br />
+      timeless <span class="text-accent-gold">grace</span>.
+    </h2>
+
+    <div class="w-16 h-[1px] bg-white/20 mx-auto mb-16 opacity-0 reveal-up"></div>
+
+    <p class="text-white/40 font-light tracking-[0.2em] uppercase text-xs max-w-2xl mx-auto leading-loose opacity-0 reveal-up">
+      At Kāalika, we believe black is the ultimate canvas of expression. It demands attention without asking for it. It is the color of the bold, the feminine, and the eternal.
+    </p>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to('.reveal-up', {
+    opacity: 1,
+    y: -20,
+    duration: 1.5,
+    stagger: 0.3,
+    ease: 'power4.out',
+    scrollTrigger: {
+      trigger: '#signature',
+      start: 'top 70%',
+    }
+  });
+</script>
+
+<style>
+  .text-accent-gold {
+    color: #d4a853;
+  }
+</style>
